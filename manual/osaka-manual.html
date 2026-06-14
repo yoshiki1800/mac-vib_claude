@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BackDoor 大阪店 新人マニュアル</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            background: #e8e8e8;
+            color: #1a1a1a;
+            font-family: 'Hiragino Kaku Gothic ProN', 'Noto Sans JP', 'Yu Gothic', sans-serif;
+            font-size: 15px;
+            line-height: 1.9;
+        }
+
+        /* ======== ページ ======== */
+        .page {
+            width: 210mm;
+            min-height: 297mm;
+            margin: 0 auto 16px;
+            padding: 13mm 15mm 13mm;
+            background: #ffffff;
+        }
+
+        /* ページヘッダー */
+        .page-header {
+            font-size: 10px;
+            color: #aaa;
+            text-align: right;
+            letter-spacing: 1px;
+            margin-bottom: 14px;
+            border-bottom: 1px solid #e8e8e8;
+            padding-bottom: 7px;
+        }
+
+        /* ======== 表紙 ======== */
+        .cover {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            min-height: 260mm;
+        }
+        .cover-kana {
+            font-size: 12px;
+            color: #999;
+            letter-spacing: 3px;
+            margin-bottom: 4px;
+        }
+        .cover-logo-text {
+            font-size: 58px;
+            font-weight: 900;
+            color: #e63329;
+            font-style: italic;
+            letter-spacing: 3px;
+        }
+        .cover-osaka {
+            font-size: 14px;
+            letter-spacing: 10px;
+            color: #e63329;
+            margin-top: 2px;
+        }
+        .cover-divider {
+            width: 50px;
+            height: 2px;
+            background: #C9A84C;
+            margin: 22px auto;
+        }
+        .cover-title {
+            font-size: 36px;
+            font-weight: 700;
+            color: #1a1a1a;
+            letter-spacing: 6px;
+        }
+        .cover-sub {
+            font-size: 13px;
+            color: #999;
+            letter-spacing: 3px;
+            margin-top: 10px;
+        }
+        .cover-notice {
+            font-size: 10px;
+            color: #bbb;
+            margin-top: 50px;
+            border: 1px solid #e0e0e0;
+            padding: 8px 22px;
+            border-radius: 4px;
+        }
+
+        /* ======== セクションタイトル ======== */
+        .section-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #1a1a1a;
+            border-left: 5px solid #C9A84C;
+            padding-left: 12px;
+            margin-bottom: 16px;
+            letter-spacing: 1px;
+        }
+
+        /* ======== ルームカード ======== */
+        .room-card {
+            border: 1px solid #e8e8e8;
+            border-radius: 8px;
+            padding: 14px 18px;
+            margin-bottom: 12px;
+            background: #fafafa;
+        }
+        .room-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 5px;
+        }
+        .room-address {
+            font-size: 12px;
+            color: #888;
+            margin-bottom: 12px;
+            line-height: 1.6;
+        }
+
+        /* ======== ステップ ======== */
+        .step {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 14px;
+            align-items: flex-start;
+        }
+        .step-num {
+            min-width: 28px;
+            height: 28px;
+            border: 2px solid #C9A84C;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: 700;
+            color: #C9A84C;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        .step-content { flex: 1; }
+        .step-title {
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 2px;
+            font-size: 15px;
+        }
+        .step-detail {
+            color: #555;
+            font-size: 13.5px;
+        }
+
+        /* ======== サブステップ ======== */
+        .sub-steps {
+            margin: 7px 0 0 4px;
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+        }
+        .sub-step {
+            font-size: 13.5px;
+            color: #555;
+            padding-left: 4px;
+        }
+
+        /* ======== バッジ ======== */
+        .badge {
+            display: inline-block;
+            padding: 1px 8px;
+            border-radius: 3px;
+            font-size: 11px;
+            font-weight: 700;
+            margin-right: 4px;
+            vertical-align: middle;
+        }
+        .badge-snow { background: #e8f4fa; color: #1a6a9a; border: 1px solid #b8d8ea; }
+        .badge-sun  { background: #fef8e7; color: #9a6a00; border: 1px solid #e8d090; }
+
+        /* ======== 注意・警告 ======== */
+        .note {
+            background: #fffdf0;
+            border-left: 3px solid #C9A84C;
+            padding: 7px 12px;
+            margin-top: 7px;
+            font-size: 13px;
+            color: #7a6000;
+            border-radius: 0 4px 4px 0;
+        }
+        .warn {
+            background: #fff5f5;
+            border-left: 3px solid #e63329;
+            padding: 7px 12px;
+            margin-top: 7px;
+            font-size: 13px;
+            color: #c0392b;
+            border-radius: 0 4px 4px 0;
+        }
+
+        /* ======== 封筒記入欄 ======== */
+        .envelope-box {
+            background: #fafafa;
+            border: 1px solid #e8e8e8;
+            border-radius: 6px;
+            padding: 11px 16px;
+            margin-top: 8px;
+            font-size: 13.5px;
+            color: #555;
+        }
+        .envelope-box .label {
+            color: #C9A84C;
+            font-size: 11px;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        /* ======== 備品タグ ======== */
+        .supplies {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 7px;
+            margin-top: 7px;
+        }
+        .supply-tag {
+            background: #f5f5f5;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 2px 10px;
+            font-size: 13px;
+            color: #555;
+        }
+
+        /* ======== 写真 ======== */
+        .photo {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            display: block;
+            margin: 10px 0;
+            object-fit: cover;
+        }
+
+        /* ======== フッター ======== */
+        .finish {
+            text-align: center;
+            margin-top: 24px;
+            padding-top: 18px;
+            border-top: 1px solid #e8e8e8;
+            color: #C9A84C;
+            font-size: 17px;
+            letter-spacing: 3px;
+            font-weight: 700;
+        }
+
+        /* ======== 印刷設定 ======== */
+        @media print {
+            body { background: #e8e8e8; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .page { margin: 0; page-break-after: always; }
+        }
+    </style>
+</head>
+<body>
+
+
+<!-- ======================================================== -->
+<!-- P1: 表紙                                                 -->
+<!-- ======================================================== -->
+<div class="page">
+    <div class="cover">
+        <div class="cover-kana">バックドア大阪店</div>
+        <div class="cover-logo-text">BackDoor</div>
+        <div class="cover-osaka">OSAKA</div>
+        <div class="cover-divider"></div>
+        <div class="cover-title">新人マニュアル</div>
+        <div class="cover-sub">セラピスト向け 個室利用ガイド</div>
+        <div class="cover-notice">このマニュアルは社外秘です。取り扱いにご注意ください。</div>
+    </div>
+</div>
+
+
+<!-- ======================================================== -->
+<!-- P2: 個室の入り方                                         -->
+<!-- ======================================================== -->
+<div class="page">
+    <div class="page-header">BackDoor OSAKA｜新人マニュアル</div>
+    <div class="section-title">⌂ 個室の入り方</div>
+
+    <!-- 雪個室 -->
+    <div class="room-card">
+        <div class="room-title">⛄️ 雪個室</div>
+        <div class="room-address">
+            メッセージ天満橋池田町 703<br>
+            〒530-0033 大阪府大阪市北区池田町１７−１
+        </div>
+        <div class="step">
+            <div class="step-num">①</div>
+            <div class="step-content">
+                <div class="step-title">703の郵便ポストを開ける</div>
+                <div class="step-detail">右へ2回 → <strong>1</strong> → 左へ1回 → <strong>5</strong></div>
+            </div>
+        </div>
+        <div class="step">
+            <div class="step-num">②</div>
+            <div class="step-content">
+                <div class="step-title">キーボックスから鍵を取り出す</div>
+                <div class="step-detail">暗証番号：<strong style="color:#C9A84C; font-size:17px;">6873</strong></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 天個室 -->
+    <div class="room-card">
+        <div class="room-title">☀️ 天個室（セブンイレブン横）</div>
+        <div class="room-address">
+            〒530-0041 大阪府大阪市北区天神橋５丁目４−２１ AIM 701
+        </div>
+        <div class="step">
+            <div class="step-num">①</div>
+            <div class="step-content">
+                <div class="step-title">701の郵便ポストを開ける</div>
+                <div class="step-detail">左へ2回 → <strong>7</strong> → 右へ1回 → <strong>3</strong></div>
+            </div>
+        </div>
+        <div class="step">
+            <div class="step-num">②</div>
+            <div class="step-content">
+                <div class="step-title">キーボックスから鍵を取り出す</div>
+                <div class="step-detail">暗証番号：<strong style="color:#C9A84C; font-size:17px;">6873</strong></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 写真：bd-01.png（雪・天共通） -->
+    <img src="bd-01.png" class="photo" alt="個室の入り方">
+</div>
+
+
+<!-- ======================================================== -->
+<!-- P3: 部屋の準備 ⓪〜③                                    -->
+<!-- ======================================================== -->
+<div class="page">
+    <div class="page-header">BackDoor OSAKA｜新人マニュアル</div>
+    <div class="section-title">🛏 部屋の準備</div>
+
+    <div class="step">
+        <div class="step-num">0</div>
+        <div class="step-content">
+            <div class="step-title">到着したらLINEの「入室」ボタンを押す</div>
+        </div>
+    </div>
+
+    <div class="step">
+        <div class="step-num">①</div>
+        <div class="step-content">
+            <div class="step-title">荷物・貴重品をしまう</div>
+            <div class="step-detail">クローゼットや物入れへ。お客様の目に入らない場所に。</div>
+        </div>
+    </div>
+
+    <div class="step">
+        <div class="step-num">②</div>
+        <div class="step-content">
+            <div class="step-title">ベッドカバー（茶色の防水シート）を確認</div>
+            <div class="step-detail" style="margin-top:5px;">
+                <span class="badge badge-snow">⛄️ 雪個室</span> 敷きっぱなしでOK<br>
+                <span class="badge badge-sun">☀️ 天個室</span> クローゼットに畳んであるので広げて敷く
+            </div>
+        </div>
+    </div>
+
+    <!-- 写真：bd-02.png（ベッド） -->
+    <img src="bd-02.png" class="photo" alt="ベッドカバー">
+
+    <div class="step">
+        <div class="step-num">③</div>
+        <div class="step-content">
+            <div class="step-title">タオルを準備する</div>
+            <div class="step-detail" style="margin-top:6px;">
+                <span class="badge badge-sun">☀️ 天個室</span><br>
+                <div style="margin-left:6px; margin-top:2px;">
+                    グレーのタオル2枚（お客様体拭き・枕カバー）、紺のタオル1枚（自分用）
+                </div>
+                <br>
+                <span class="badge badge-snow">⛄️ 雪個室</span><br>
+                <div style="margin-left:6px; margin-top:2px;">
+                    玄関のタオル3枚を使用<br>
+                    薄め紺タオル（自分用）／厚め紺タオル（枕カバー）／カラータオル（お客様体拭き）
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 写真：bd-03.png（タオル） -->
+    <img src="bd-03.png" class="photo" alt="タオルの場所">
+</div>
+
+
+<!-- ======================================================== -->
+<!-- P4: 部屋の準備 ④〜⑥                                    -->
+<!-- ======================================================== -->
+<div class="page">
+    <div class="page-header">BackDoor OSAKA｜新人マニュアル</div>
+    <div class="section-title">🛏 部屋の準備（続き）</div>
+
+    <div class="step">
+        <div class="step-num">④</div>
+        <div class="step-content">
+            <div class="step-title">音楽の準備</div>
+            <div class="step-detail">
+                ご自身のスマホで音楽を流す準備をしておく。音源は自由。お客様に聞くのもOK。<br>
+                <span class="badge badge-sun">☀️ 天個室</span> CDもあるので使用可
+            </div>
+        </div>
+    </div>
+
+    <div class="step">
+        <div class="step-num">⑤</div>
+        <div class="step-content">
+            <div class="step-title">カウンセリングシート・オプションボードを準備</div>
+            <div class="step-detail">
+                カウンセリングシートはクリアファイルの上から直接記入（ホワイトボードペン使用）<br>
+                オプションボードは自分が対応可能なものだけ貼っておく
+            </div>
+            <div class="note">後で決めたい場合はボードを隠しておき、お客様と合流後そっと出す</div>
+        </div>
+    </div>
+
+    <!-- 写真：bd-04.png（オプションボード） -->
+    <img src="bd-04.png" class="photo" alt="オプションボード">
+
+    <div class="step">
+        <div class="step-num">⑥</div>
+        <div class="step-content">
+            <div class="step-title">間接照明をつける</div>
+            <div class="step-detail" style="margin-top:5px;">
+                <span class="badge badge-sun">☀️ 天個室</span> 右奥の電気・机側の豆電球<br>
+                <span class="badge badge-snow">⛄️ 雪個室</span> 奥の間接照明（1つでOK）・机の電気
+            </div>
+            <div class="note">カウンセリングシート記入中は明るくてもOK。記入後に照明を落とす。</div>
+        </div>
+    </div>
+
+    <!-- 写真：bd-05.png（間接照明） -->
+    <img src="bd-05.png" class="photo" alt="間接照明">
+</div>
+
+
+<!-- ======================================================== -->
+<!-- P5: お迎えについて                                        -->
+<!-- ======================================================== -->
+<div class="page">
+    <div class="page-header">BackDoor OSAKA｜新人マニュアル</div>
+    <div class="section-title">🚶 お迎えについて</div>
+
+    <div class="step">
+        <div class="step-num">①</div>
+        <div class="step-content">
+            <div class="step-title">部屋のバッグを持って集合場所へ向かう</div>
+            <div class="step-detail">開始時間の1〜2分前には集合場所に到着するよう、3分前には出発すること。</div>
+        </div>
+    </div>
+
+    <div class="step">
+        <div class="step-num">②</div>
+        <div class="step-content">
+            <div class="step-title">お客様を確認する</div>
+            <div class="step-detail">基本はお客様から声をかけてもらう。それっぽい方がいれば近づいて目線を合わせる。</div>
+        </div>
+    </div>
+
+    <div class="step">
+        <div class="step-num">③</div>
+        <div class="step-content">
+            <div class="step-title">部屋までエスコートする</div>
+            <div class="step-detail">ドアを開けてあげる、先に出てもらうなど、丁寧な対応を心がける。</div>
+        </div>
+    </div>
+
+    <div class="step">
+        <div class="step-num">④</div>
+        <div class="step-content">
+            <div class="step-title">部屋の案内をする</div>
+            <div class="step-detail">
+                先に入ってもらい「奥の部屋に入って椅子にお座りください」と案内する。<br>
+                荷物・服をかける場所に戸惑っていたら丁寧に案内する。
+            </div>
+        </div>
+    </div>
+
+    <!-- 写真：bd-06.png（集合場所） -->
+    <img src="bd-06.png" class="photo" alt="集合場所">
+</div>
+
+
+<!-- ======================================================== -->
+<!-- P6: コース開始 ①〜⑤                                    -->
+<!-- ======================================================== -->
+<div class="page">
+    <div class="page-header">BackDoor OSAKA｜新人マニュアル</div>
+    <div class="section-title">▶ コース開始</div>
+
+    <div class="step">
+        <div class="step-num">①</div>
+        <div class="step-content">
+            <div class="step-title">カウンセリングシート・オプションの確認</div>
+            <div class="step-detail">クリアファイルに直接書くよう指示。オプションボードを渡し、希望するものを右にずらしてもらう。</div>
+        </div>
+    </div>
+
+    <div class="step">
+        <div class="step-num">②</div>
+        <div class="step-content">
+            <div class="step-title">シャワーを出して温めておく</div>
+            <div class="step-detail">
+                <span class="badge badge-sun">☀️ 天個室</span> 湯量が限られているため、一緒に入るときにシャワーを調整する
+            </div>
+        </div>
+    </div>
+
+    <div class="step">
+        <div class="step-num">③</div>
+        <div class="step-content">
+            <div class="step-title">カウンセリングシート・オプションの最終確認</div>
+            <div class="step-detail">間違いがないかしっかり確認する。</div>
+        </div>
+    </div>
+
+    <div class="step">
+        <div class="step-num">④</div>
+        <div class="step-content">
+            <div class="step-title">お金をいただく</div>
+            <div class="step-detail">受け取ったお金はお客様から見えない場所に保管する。</div>
+        </div>
+    </div>
+
+    <div class="step">
+        <div class="step-num">⑤</div>
+        <div class="step-content">
+            <div class="step-title">シャワーを浴びる</div>
+            <div class="step-detail">一緒に浴びる場合には身体も洗ってあげる。</div>
+        </div>
+    </div>
+
+    <!-- 写真：bd-07.png（シャワー） -->
+    <img src="bd-07.png" class="photo" alt="シャワー">
+</div>
+
+
+<!-- ======================================================== -->
+<!-- P7: コース開始 ⑥〜⑩                                    -->
+<!-- ======================================================== -->
+<div class="page">
+    <div class="page-header">BackDoor OSAKA｜新人マニュアル</div>
+    <div class="section-title">▶ コース開始（続き）</div>
+
+    <div class="step">
+        <div class="step-num">⑥</div>
+        <div class="step-content">
+            <div class="step-title">シャワーを先に出てもらう</div>
+            <div class="step-detail">身体を拭いたらベッドにうつ伏せになるよう指示する。</div>
+        </div>
+    </div>
+
+    <div class="step">
+        <div class="step-num">⑦</div>
+        <div class="step-content">
+            <div class="step-title">コーススタート</div>
+            <div class="step-detail">時間配分に注意。照明・灯りは随時変更する。</div>
+            <div class="warn">⚠️ 時間が余っても絶対に早く返さない。添い寝やお話で時間を使うこと。早く返すとクレームになります。</div>
+        </div>
+    </div>
+
+    <div class="step">
+        <div class="step-num">⑧</div>
+        <div class="step-content">
+            <div class="step-title">体液の処理</div>
+            <div class="step-detail">トイレットペーパーで拭き取り、トイレに流すこと。</div>
+        </div>
+    </div>
+
+    <div class="step">
+        <div class="step-num">⑨</div>
+        <div class="step-content">
+            <div class="step-title">コース後のシャワー</div>
+            <div class="step-detail">
+                先にシャワールームへ行きお湯を出す。温まったらお客様をお呼びする。<br>
+                一緒に入る場合は身体を洗ってあげる。別々の場合はお客様を先に入れる。
+            </div>
+            <div class="warn">⚠️ お客様がいる状態で自分だけシャワーに入ることは絶対にしない（盗難・盗撮の恐れあり）</div>
+        </div>
+    </div>
+
+    <div class="step">
+        <div class="step-num">⑩</div>
+        <div class="step-content">
+            <div class="step-title">着替えて終了</div>
+            <div class="step-detail">忘れ物がないか確認する。お見送りは玄関まででOK。</div>
+        </div>
+    </div>
+</div>
+
+
+<!-- ======================================================== -->
+<!-- P8: 部屋の片付け ①〜④                                   -->
+<!-- ======================================================== -->
+<div class="page">
+    <div class="page-header">BackDoor OSAKA｜新人マニュアル</div>
+    <div class="section-title">🧹 部屋の片付け</div>
+
+    <div class="step">
+        <div class="step-num">①</div>
+        <div class="step-content">
+            <div class="step-title">ベッドシート（茶色）のオイル汚れを拭き取る</div>
+            <div class="step-detail">ベトベトが残りやすいので必ず二度拭きすること。</div>
+            <div class="sub-steps">
+                <div class="sub-step">❶ 使い終わったタオルでオイルを取るように拭く</div>
+                <div class="sub-step">❷ 拭き取り用タオル（黄色）と洗剤スプレーでしっかり拭く</div>
+            </div>
+            <div class="note">ベトベトがなくなるまで何度か繰り返す</div>
+        </div>
+    </div>
+
+    <div class="step">
+        <div class="step-num">②</div>
+        <div class="step-content">
+            <div class="step-title">オイルの台・周辺を清掃</div>
+            <div class="step-detail">オイルボトルや台が汚れていないか確認。使い捨てシートで清掃する。</div>
+        </div>
+    </div>
+
+    <div class="step">
+        <div class="step-num">③</div>
+        <div class="step-content">
+            <div class="step-title">床の清掃（クイックルワイパー）</div>
+            <div class="step-detail" style="margin-top:4px;">
+                <span class="badge badge-sun">☀️ 天個室</span> 浴室前のカーテン内にあり<br>
+                <span class="badge badge-snow">⛄️ 雪個室</span> ロッカー横に棒・キッチン下にフローリングシート
+            </div>
+        </div>
+    </div>
+
+    <!-- 写真：bd-08.png（掃除用具・干す場所） -->
+    <img src="bd-08.png" class="photo" alt="掃除用具・干す場所">
+
+    <div class="step">
+        <div class="step-num">④</div>
+        <div class="step-content">
+            <div class="step-title">お風呂の確認</div>
+            <div class="sub-steps">
+                <div class="sub-step">❶ お風呂内を再度水で流す</div>
+                <div class="sub-step">❷ ボディーソープを確認。ない場合はキッチン下の予備を補充</div>
+                <div class="sub-step">❸ 換気扇が回っているか確認</div>
+                <div class="sub-step">❹ バスマットを立ち上げて指定の場所に立てかける</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- ======================================================== -->
+<!-- P9: 部屋の片付け ⑤〜⑩                                   -->
+<!-- ======================================================== -->
+<div class="page">
+    <div class="page-header">BackDoor OSAKA｜新人マニュアル</div>
+    <div class="section-title">🧹 部屋の片付け（続き）</div>
+
+    <div class="step">
+        <div class="step-num">⑤</div>
+        <div class="step-content">
+            <div class="step-title">お金の精算</div>
+            <div class="step-detail">封筒に以下を記入し、シールで封をして、お金を入れてポストに投函する。</div>
+            <div class="envelope-box">
+                <div class="label">📝 封筒への記入事項</div>
+                ・日付<br>
+                ・名前（セラピスト名）<br>
+                ・コースと金額<br>
+                ・その他備考
+            </div>
+        </div>
+    </div>
+
+    <div class="step">
+        <div class="step-num">⑥</div>
+        <div class="step-content">
+            <div class="step-title">タオルをベランダに干す</div>
+            <div class="step-detail">使用済みタオルを物干し竿に干す。ある程度乾いているものはカゴに入れる。</div>
+        </div>
+    </div>
+
+    <div class="step">
+        <div class="step-num">⑦</div>
+        <div class="step-content">
+            <div class="step-title">備品補充をお願いします</div>
+            <div class="step-detail">気がついたら補充または連絡を！</div>
+            <div class="supplies">
+                <span class="supply-tag">オイル</span>
+                <span class="supply-tag">トイレットペーパー</span>
+                <span class="supply-tag">ボディーソープ</span>
+                <span class="supply-tag">マウスウォッシュ</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="step">
+        <div class="step-num">⑧</div>
+        <div class="step-content">
+            <div class="step-title">戸締り・現状復帰の確認</div>
+            <div class="step-detail">ベランダや窓の戸締りを確認。全体を見回して現状復帰できているか確認する。</div>
+        </div>
+    </div>
+
+    <div class="step">
+        <div class="step-num">⑨</div>
+        <div class="step-content">
+            <div class="step-title">照明・音楽・エアコンを消す</div>
+            <div class="warn">⚠️ トイレの電気の消し忘れに特に注意！全部屋を一周して確認すること。</div>
+        </div>
+    </div>
+
+    <div class="step">
+        <div class="step-num">⑩</div>
+        <div class="step-content">
+            <div class="step-title">鍵をキーボックスに入れ、ポストに戻す</div>
+            <div class="step-detail">戻したら必ずLINEの<strong style="color:#C9A84C;">「退出」</strong>ボタンを押すこと。</div>
+        </div>
+    </div>
+
+    <div class="finish">以上です！お疲れ様でした ✨</div>
+</div>
+
+
+</body>
+</html>
