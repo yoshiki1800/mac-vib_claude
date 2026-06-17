@@ -19,6 +19,7 @@
 | 価値提供⑪ | ゲイマッサージに後ろめたさを感じるのは、あなただけじゃない話 | 2026-06-09 | https://note.com/backdoor_g/n/n12f238e51a92 |
 | 集客⑫ | 大阪のゲイマッサージでよくある質問、全部まとめて答えます【BackDoor大阪店FAQ】 | 2026-06-12 | https://note.com/backdoor_g/n/n11e1cbd56e8d |
 | 選び方⑬ | ゲイマッサージは何分がいい？コース選びに迷ったら読んでください。 | 2026-06-16 | https://note.com/backdoor_g/n/n22c133eb6882 |
+| 大阪店⑭ | VIOを脱毛したいけど勇気が出ない方へ【BackDoor大阪限定】 | 2026-06-16 | https://note.com/backdoor_g/n/nbc8d86ae674e |
 
 ---
 
