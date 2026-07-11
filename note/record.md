@@ -22,6 +22,7 @@
 | 大阪店⑭ | VIOを脱毛したいけど勇気が出ない方へ【BackDoor大阪限定】 | 2026-06-16 | https://note.com/backdoor_g/n/nbc8d86ae674e |
 | 価値提供⑮ | オイルマッサージを男性が受けるイメージはありますか？ | 2026-06-24 | https://note.com/backdoor_g/n/n9b26b0936a66 |
 | 集客⑯ | ゲイマッサージ大阪・BackDoor2周年！60分が8,000円になります | 2026-07-06 | https://note.com/backdoor_g/n/n8f0685f42c89 |
+| SEO系⑱ | 指圧マッサージとオイルマッサージの違い【3つの軸で比較】 | 2026-07 | https://note.com/backdoor_g/n/nba1979d2eae0 |
 | 業界解説⑰ | ゲイマッサージ予約、どれくらい前にするのがいい？当日予約の注意点 | 2026-07-09 | https://note.com/backdoor_g/n/na849cf3d7521 |
 
 ---
